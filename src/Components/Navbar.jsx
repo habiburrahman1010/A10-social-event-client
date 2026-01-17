@@ -12,8 +12,12 @@ const Navbar = () => {
   const links = (
     <>
       <li><Link to="/">Home</Link></li>
+      <li><Link to="/my-events">my events</Link></li>
+
       <li><Link to="/events">Upcoming Events</Link></li>
       <li><Link to= "/create-event">Create Events</Link></li>
+      <li><Link to= "/joined-events">Joined Events</Link></li>
+    
     </>
   );
 
