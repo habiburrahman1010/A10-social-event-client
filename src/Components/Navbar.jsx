@@ -29,8 +29,8 @@ const Navbar = () => {
     <div className="navbar bg-base-100 shadow-sm px-4">
       {/* Navbar Start */}
       <div className="navbar-start">
-        <Link to="/" className="btn btn-ghost text-xl">
-          Social Events
+        <Link to="/" className=" text-2xl font-bold">
+          Social <span className="text-blue-700">Events</span>
         </Link>
       </div>
 
@@ -49,13 +49,13 @@ const Navbar = () => {
       {/* Navbar End */}
       <div className="navbar-end flex items-center gap-3">
         {!user ? (
-         
+
           <Link to="/login" className="btn btn-sm btn-primary">
             Login
           </Link>
         ) : (
           <>
-            {/* Profile Dropdown */}
+
             <div className="dropdown dropdown-end">
               <label
                 tabIndex={0}
@@ -64,9 +64,14 @@ const Navbar = () => {
               >
                 <div className="w-10 rounded-full">
                   <img
-                    src={user.photoURL || "https://i.ibb.co/2kRzZ0n/user.png"}
-                    alt="User"
+                    src={
+                      user.photoURL
+                        ? user.photoURL
+                        : "https://i.ibb.co/vxrpPf75/man-in-suit-and-tie.png"
+                    }
+                    alt={user.displayName || "User"}
                   />
+
                 </div>
               </label>
               <ul
@@ -85,7 +90,7 @@ const Navbar = () => {
               </ul>
             </div>
 
-            {/* Logout Button */}
+
             <button onClick={handleLogout} className="btn btn-sm btn-primary">
               Logout
             </button>

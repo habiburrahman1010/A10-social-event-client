@@ -57,7 +57,7 @@ const CreateEvent = () => {
 
   return (
     <div className="max-w-md mx-auto mt-8 p-4 shadow-lg bg-base-100">
-      <h2 className="text-2xl font-bold mb-4">Create Event</h2>
+      <h2 className="text-2xl font-bold mb-4">Create <span className="text-blue-700">Events</span></h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <input
           name="title"
@@ -103,7 +103,7 @@ const CreateEvent = () => {
         <DatePicker
           selected={formData.date}
           onChange={handleDateChange}
-          minDate={tomorrow} // prevent today & past
+          minDate={tomorrow} 
           placeholderText="Select a future date"
           className="input input-bordered w-full"
         />

@@ -70,7 +70,7 @@ const Register = () => {
           <input className="input input-bordered mb-3" type="text" name="photo" placeholder="Photo URL" required />
           <input className="input input-bordered mb-3" type="email" name="email" placeholder="Email" required />
           <input className="input input-bordered mb-3" type="password" name="password" placeholder="Password" required />
-          <button className="btn btn-neutral w-full">Register</button>
+          <button className="btn btn-primary w-full">Register</button>
         </form>
 
         {error && <p className="text-red-500 mt-2">{error}</p>}

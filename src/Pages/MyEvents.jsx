@@ -69,7 +69,7 @@ const MyEvents = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
-      <h2 className="text-3xl font-bold mb-8 text-center">My Created Events</h2>
+      <h2 className="text-3xl font-bold mb-8 text-center">My Created <span className="text-blue-700">Events</span></h2>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {events.map((event) => (
