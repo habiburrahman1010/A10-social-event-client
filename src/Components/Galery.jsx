@@ -2,7 +2,7 @@ import React from "react";
 
 const Gallery = () => {
   return (
-    <div className="bg-white py-16">
+    <div className="bg-base-200 py-16">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-4">Event Gallery</h2>
         <p className="text-gray-500 mb-12">

@@ -4,7 +4,7 @@ import { FaFacebookF, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-100 text-gray-700 px-6 py-8">
+        <footer className="bg-base-200 text-gray-700 px-6 py-8 mb-6">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
 
                 <div className="flex items-center gap-3">

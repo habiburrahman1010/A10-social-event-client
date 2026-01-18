@@ -2,9 +2,9 @@ import React from "react";
 
 const Newsletter = () => {
     return (
-        <div className="bg-gradient-to-r from-blue-50 via-white to-blue-100 py-20">
+        <div className="bg-base-100 py-20">
             <div className="max-w-4xl mx-auto px-4">
-                <div className="bg-white rounded-2xl shadow-lg p-10 text-center">
+                <div className="bg-base-300 rounded-2xl shadow-lg p-10 text-center">
                     <h2 className="text-3xl font-bold mb-3">
                         Subscribe to Our Newsletter
                     </h2>

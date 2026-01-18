@@ -1,19 +1,30 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContex } from "../provider/AuthProvider";
 import Loading from "../pages/Loading";
+import { BsSun, BsMoon } from "react-icons/bs";
 
 const Navbar = () => {
   const { user, loading, logOut } = useContext(AuthContex);
 
-  const handleLogout = () => {
-    logOut().catch(console.error);
+  const handleLogout = () => logOut().catch(console.error);
+
+  // Theme state
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+    const html = document.documentElement;
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const handleTheme = (checked) => {
+    setTheme(checked ? "dark" : "light");
   };
 
-  // If Firebase is still checking auth, show loading skeleton
   if (loading) {
     return (
-      <div className="navbar bg-base-100 shadow-sm px-4 ">
+      <div className="navbar bg-base-100 shadow-sm px-4">
         <div className="flex items-center justify-between w-full">
           <div className="bg-gray-200 dark:bg-gray-700 h-8 w-32 rounded animate-pulse"></div>
           <div className="flex gap-2">
@@ -29,7 +40,7 @@ const Navbar = () => {
     <div className="navbar bg-base-100 shadow-sm px-4">
       {/* Navbar Start */}
       <div className="navbar-start">
-        <Link to="/" className=" text-2xl font-bold">
+        <Link to="/" className="text-2xl font-bold">
           Social <span className="text-blue-700">Events</span>
         </Link>
       </div>
@@ -48,14 +59,23 @@ const Navbar = () => {
 
       {/* Navbar End */}
       <div className="navbar-end flex items-center gap-3">
-        {!user ? (
+        {/* Theme toggle */}
+        <label className="swap swap-rotate">
+          <input
+            type="checkbox"
+            checked={theme === "dark"}
+            onChange={(e) => handleTheme(e.target.checked)}
+          />
+          <BsMoon className="swap-on text-xl text-gray-700" />
+          <BsSun className="swap-off text-xl text-yellow-400" />
+        </label>
 
+        {!user ? (
           <Link to="/login" className="btn btn-sm btn-primary">
             Login
           </Link>
         ) : (
           <>
-
             <div className="dropdown dropdown-end">
               <label
                 tabIndex={0}
@@ -71,7 +91,6 @@ const Navbar = () => {
                     }
                     alt={user.displayName || "User"}
                   />
-
                 </div>
               </label>
               <ul
@@ -89,7 +108,6 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-
 
             <button onClick={handleLogout} className="btn btn-sm btn-primary">
               Logout

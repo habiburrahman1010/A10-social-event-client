@@ -4,7 +4,7 @@ import { motion } from "framer-motion"; // ✅ Import Framer Motion
 
 const EventCard = ({ event, showButton = true }) => {
   return (
-    <div className="card bg-blue-50 shadow-md mb-4">
+    <div className="card bg-base-300 shadow-md mb-4">
       <figure>
         <img
           src={event.image}

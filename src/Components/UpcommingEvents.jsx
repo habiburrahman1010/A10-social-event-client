@@ -33,7 +33,7 @@ const UpcomingEvents = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
-      <h2 className="text-3xl font-bold mb-6 text-center">Upcoming Events</h2>
+      <h2 className="text-3xl font-bold mb-6 text-center">Upcoming <span className="text-blue-700">Events</span></h2>
 
       <div className="flex flex-col md:flex-row gap-4 mb-8 justify-between">
         <input

@@ -75,7 +75,7 @@ const MyEvents = () => {
         {events.map((event) => (
           <div
             key={event._id}
-            className="bg-blue-100
+            className="bg-base-300
              shadow-lg rounded-xl p-5 hover:shadow-xl transition"
           >
             {editingId === event._id ? (

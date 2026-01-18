@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="bg-gradient-to-r from-blue-50 via-white to-blue-100">
+    <div className="bg-base-200">
       <div className="max-w-7xl mx-auto min-h-[80vh] flex items-center px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
