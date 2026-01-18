@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { AuthContex } from "../provider/AuthProvider";
+import Loading from "./Loading";
 
 const MyEvents = () => {
   const { user } = useContext(AuthContex);
@@ -47,10 +48,7 @@ const MyEvents = () => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    if (selectedDate < today) {
-      alert("Please select a future date only");
-      return;
-    }
+    
 
     const res = await fetch(`http://localhost:5000/events/${id}`, {
       method: "PUT",
@@ -66,18 +64,19 @@ const MyEvents = () => {
     }
   };
 
-  if (loading) return <p className="text-center mt-10">Loading events...</p>;
+  if (loading) return <Loading></Loading>
   if (error) return <p className="text-center mt-10 text-red-500">{error}</p>;
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
       <h2 className="text-3xl font-bold mb-8 text-center">My Created Events</h2>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {events.map((event) => (
           <div
             key={event._id}
-            className="bg-white shadow-lg rounded-xl p-5 hover:shadow-xl transition"
+            className="bg-blue-100
+             shadow-lg rounded-xl p-5 hover:shadow-xl transition"
           >
             {editingId === event._id ? (
               <div className="space-y-3">
@@ -101,7 +100,7 @@ const MyEvents = () => {
                 <div className="flex gap-3">
                   <button
                     onClick={() => handleUpdate(event._id)}
-                    className="flex-1 bg-green-500 text-white py-2 rounded-lg hover:bg-green-600"
+                    className="flex-1 bg-blue-800 text-white py-2 rounded-lg hover:bg-blue-600"
                   >
                     Save
                   </button>

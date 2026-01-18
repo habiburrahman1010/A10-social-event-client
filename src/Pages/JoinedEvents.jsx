@@ -18,7 +18,7 @@ const JoinedEvents = () => {
     if (!user) return <p className="text-center mt-8">Please log in to see your joined events</p>;
 
     return (
-        <div className="max-w-5xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="max-w-5xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 space-y-4">
             {events.length === 0 ? (
                 <p className="col-span-full text-center">You haven’t joined any events yet.</p>
             ) : (

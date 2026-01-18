@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContex } from "../provider/AuthProvider";
+import Loading from "./Loading";
 
 const EventDetails = () => {
     const { id } = useParams();
@@ -26,19 +27,13 @@ const EventDetails = () => {
             body: JSON.stringify({ userEmail: user.email }),
         });
 
-        if (res.ok) {
-            alert("You joined the event!");
-            setJoined(true);
-        } else {
-            const data = await res.json();
-            alert("Failed to join event: " + data.message);
-        }
+       
     };
 
-    if (!event) return <p>Loading...</p>;
+    if (!event) return <Loading></Loading>
 
     return (
-        <div className="max-w-2xl mx-auto mt-8 p-4 shadow-lg bg-base-100">
+        <div className="max-w-2xl mx-auto mt-8 p-4 shadow-lg bg-blue-100 rounded-2xl mb-6">
             <h2 className="text-3xl font-bold mb-2">{event.title}</h2>
 
             <p className="mb-2"><strong>Description:</strong> {event.description}</p>

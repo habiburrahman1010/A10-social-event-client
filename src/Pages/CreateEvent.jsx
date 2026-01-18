@@ -64,20 +64,20 @@ const CreateEvent = () => {
           placeholder="Title"
           onChange={handleChange}
           required
-          className="input input-bordered"
+          className="input input-bordered  w-full"
         />
         <input
           name="description"
           placeholder="Description"
           onChange={handleChange}
           required
-          className="input input-bordered"
+          className="input input-bordered  w-full"
         />
         <select
           name="type"
           onChange={handleChange}
           required
-          className="input input-bordered"
+          className="input input-bordered  w-full"
         >
           <option value="">Select Type</option>
           <option value="Cleanup">Cleanup</option>
@@ -89,14 +89,14 @@ const CreateEvent = () => {
           placeholder="Image URL"
           onChange={handleChange}
           required
-          className="input input-bordered"
+          className="input input-bordered  w-full"
         />
         <input
           name="location"
           placeholder="Location"
           onChange={handleChange}
           required
-          className="input input-bordered"
+          className="input input-bordered  w-full"
         />
         
        {/* ---------------------- */}
