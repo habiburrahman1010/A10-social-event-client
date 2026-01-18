@@ -23,7 +23,7 @@ const EventCard = ({ event,showButton = true }) => {
         <p className="text-sm">Type: {event.type}</p>
 
           {showButton && (
-          <Link to={`/events/${event._id}`} className="btn btn-sm mt-2">
+          <Link to={`/events/${event._id}`} className="btn btn-primary btn-sm mt-2">
             View Event
           </Link>
         )}

@@ -9,6 +9,7 @@ import EventDetails from "../Pages/EventDetails";
 import JoinedEvents from "../Pages/JoinedEvents";
 
 import MyEvents from "../Pages/MyEvents";
+import PrivetRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter([
     {
@@ -33,21 +34,21 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/create-event",
-                element: <CreateEvent />
+                element:<PrivetRoute> <CreateEvent /></PrivetRoute>
             },
             {
                 path: "/events/:id",
-                element: <EventDetails></EventDetails>
+                element:<PrivetRoute> <EventDetails></EventDetails></PrivetRoute>
             },
             {
                 path: "/joined-events",
-                element: <JoinedEvents></JoinedEvents>
+                element: <PrivetRoute><JoinedEvents></JoinedEvents></PrivetRoute>
             },
            
             {
                 path: "/my-events",
                
-                element: <MyEvents></MyEvents>
+                element: <PrivetRoute><MyEvents></MyEvents></PrivetRoute>
             },
         ],
     },

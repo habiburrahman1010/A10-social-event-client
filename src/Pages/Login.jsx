@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContex } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -14,49 +15,65 @@ const Login = () => {
 
     setError("");
     signIn(email, password)
-      .then(() => navigate("/"))
-      .catch((error) => setError(error.message));
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Logged in successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate("/");
+      })
+      .catch((error) => {
+        setError(error.message);
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed",
+          text: error.message,
+        });
+      });
   };
 
   const handleGoogleLogin = () => {
     googleLogin()
-      .then(() => navigate("/"))
-      .catch((error) => setError(error.message));
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Logged in with Google",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate("/");
+      })
+      .catch((error) => {
+        setError(error.message);
+        Swal.fire({
+          icon: "error",
+          title: "Google Login Failed",
+          text: error.message,
+        });
+      });
   };
 
   return (
     <div className="card bg-base-100 w-full max-w-sm shadow-2xl m-auto my-8">
-
-      
       <div className="card-body">
         <form onSubmit={handleSubmit}>
           <h2 className="font-bold text-2xl text-center py-4">Welcome to login</h2>
           <label>Email</label>
-          <input
-            type="email"
-            className="input input-bordered"
-            name="email"
-            placeholder="Email"
-          />
-
+          <input type="email" className="input input-bordered" name="email" placeholder="Email" />
           <label>Password</label>
-          <input
-            type="password"
-            className="input input-bordered"
-            name="password"
-            placeholder="Password"
-          />
-
+          <input type="password" className="input input-bordered" name="password" placeholder="Password" />
           <button className="btn btn-neutral mt-4 w-full ">Login</button>
         </form>
 
-
-        <p className="mt-2 ">
+        <p className="mt-2">
           <Link
             to={`/auth/forgot-password?email=${encodeURIComponent(
               document.querySelector("input[name='email']")?.value || ""
             )}`}
-            className="text-blue-400 underline" >
+            className="text-blue-400 underline"
+          >
             Forgot Password?
           </Link>
         </p>
