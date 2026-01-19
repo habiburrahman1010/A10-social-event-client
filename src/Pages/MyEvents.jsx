@@ -19,7 +19,7 @@ const MyEvents = () => {
       return;
     }
 
-    fetch(`http://localhost:5000/my-events/${userEmail}`)
+    fetch(`https://a10-social-event-server.vercel.app/my-events/${userEmail}`)
       .then((res) => res.json())
       .then((data) => {
         setEvents(data);
@@ -48,9 +48,9 @@ const MyEvents = () => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    
 
-    const res = await fetch(`http://localhost:5000/events/${id}`, {
+
+    const res = await fetch(`https://a10-social-event-server.vercel.app/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),

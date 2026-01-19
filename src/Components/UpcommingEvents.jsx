@@ -15,7 +15,7 @@ const UpcomingEvents = () => {
     if (type && type !== "all") params.append("type", type);
     if (search) params.append("search", search);
 
-    fetch(`http://localhost:5000/events?${params.toString()}`)
+    fetch(`https://a10-social-event-server.vercel.app?${params.toString()}`)
       .then((res) => res.json())
       .then((data) => {
         setEvents(data);
@@ -56,7 +56,7 @@ const UpcomingEvents = () => {
         </select>
       </div>
 
-     
+
       {loading ? (
         <Loading></Loading>
       ) : events.length === 0 ? (

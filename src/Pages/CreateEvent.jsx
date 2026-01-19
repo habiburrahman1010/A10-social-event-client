@@ -15,7 +15,7 @@ const CreateEvent = () => {
     type: "",
     image: "",
     location: "",
-    date: null, 
+    date: null,
   });
 
   const handleChange = (e) => {
@@ -31,13 +31,13 @@ const CreateEvent = () => {
     if (!user) return alert("You must be logged in to create an event");
     if (!formData.date) return alert("Please select a date");
 
-    const eventData = { 
-      ...formData, 
+    const eventData = {
+      ...formData,
       creatorEmail: user.email,
-      date: formData.date.toISOString(), 
+      date: formData.date.toISOString(),
     };
 
-    const res = await fetch("http://localhost:5000/events", {
+    const res = await fetch("https://a10-social-event-server.vercel.app/events", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(eventData),
@@ -51,7 +51,7 @@ const CreateEvent = () => {
     }
   };
 
- 
+
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
 
@@ -98,12 +98,12 @@ const CreateEvent = () => {
           required
           className="input input-bordered  w-full"
         />
-        
-       {/* ---------------------- */}
+
+        {/* ---------------------- */}
         <DatePicker
           selected={formData.date}
           onChange={handleDateChange}
-          minDate={tomorrow} 
+          minDate={tomorrow}
           placeholderText="Select a future date"
           className="input input-bordered w-full"
         />

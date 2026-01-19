@@ -12,7 +12,7 @@ const EventDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/events/${id}`)
+    fetch(`https://a10-social-event-server.vercel.app/${id}`)
       .then(res => res.json())
       .then(data => {
         setEvent(data);
@@ -26,7 +26,7 @@ const EventDetails = () => {
       return alert("Please login");
     };
 
-    fetch(`http://localhost:5000/events/${id}/join`, {
+    fetch(`https://a10-social-event-server.vercel.app/${id}/join`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userEmail: user.email }),

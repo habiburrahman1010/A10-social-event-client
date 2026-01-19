@@ -10,7 +10,7 @@ const JoinedEvents = () => {
     useEffect(() => {
         if (!user) return;
 
-        fetch(`http://localhost:5000/joined-events/${user.email}`)
+        fetch(`https://a10-social-event-server.vercel.app/joined-events/${user.email}`)
             .then((res) => res.json())
             .then((data) => setEvents(data))
             .catch((err) => console.error(err));
