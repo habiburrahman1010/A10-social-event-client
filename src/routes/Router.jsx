@@ -10,11 +10,13 @@ import JoinedEvents from "../Pages/JoinedEvents";
 
 import MyEvents from "../Pages/MyEvents";
 import PrivetRoute from "./PrivateRoute";
+import NotFound from "../Pages/NotFound";
 
 const Router = createBrowserRouter([
     {
         path: "/",
         element: <HomeLayout />,
+        errorElement:<NotFound></NotFound>,
         children: [
             {
                 path: "/",
@@ -38,7 +40,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/events/:id",
-                element:<PrivetRoute> <EventDetails></EventDetails></PrivetRoute>
+                element: <EventDetails></EventDetails>
             },
             {
                 path: "/joined-events",

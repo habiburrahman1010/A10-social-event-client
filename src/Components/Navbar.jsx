@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const handleLogout = () => logOut().catch(console.error);
 
-  // Theme state
+
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   useEffect(() => {
@@ -38,14 +38,14 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-base-100 shadow-sm px-4">
-      {/* Navbar Start */}
+   
       <div className="navbar-start">
         <Link to="/" className="text-2xl font-bold">
           Social <span className="text-blue-700">Events</span>
         </Link>
       </div>
 
-      {/* Navbar Center */}
+  
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
@@ -57,9 +57,9 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* Navbar End */}
+   
       <div className="navbar-end flex items-center gap-3">
-        {/* Theme toggle */}
+   
         <label className="swap swap-rotate">
           <input
             type="checkbox"

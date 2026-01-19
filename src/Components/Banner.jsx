@@ -6,7 +6,7 @@ const Banner = () => {
       <div className="max-w-7xl mx-auto min-h-[80vh] flex items-center px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
-          {/* Text */}
+        
           <div>
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
               Organize & Join <br />

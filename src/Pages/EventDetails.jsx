@@ -22,7 +22,9 @@ const EventDetails = () => {
   }, [id, user]);
 
   const handleJoin = () => {
-    if (!user) return;
+    if (!user) {
+      return alert("Please login");
+    };
 
     fetch(`http://localhost:5000/events/${id}/join`, {
       method: "POST",

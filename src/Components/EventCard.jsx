@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion"; // ✅ Import Framer Motion
+import { motion } from "framer-motion"; 
 
 const EventCard = ({ event, showButton = true }) => {
   return (

@@ -51,7 +51,7 @@ const CreateEvent = () => {
     }
   };
 
-  // Minimum selectable date is **tomorrow**
+ 
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
 
