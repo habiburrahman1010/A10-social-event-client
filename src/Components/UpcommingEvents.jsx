@@ -15,7 +15,7 @@ const UpcomingEvents = () => {
     if (type && type !== "all") params.append("type", type);
     if (search) params.append("search", search);
 
-    fetch(`https://a10-social-event-server.vercel.app?${params.toString()}`)
+    fetch(`https://a10-social-event-server-jodjzk0zv-habiburrahman1010s-projects.vercel.app/events?${params.toString()}`)
       .then((res) => res.json())
       .then((data) => {
         setEvents(data);

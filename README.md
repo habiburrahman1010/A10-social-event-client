@@ -1,16 +1,28 @@
-# React + Vite
+# A10 Social Events
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Site: https://social-event-7c404.web.app/
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
+A10 Social Events is a platform to create, browse, and join social events like cleanups, plantations, and donations. Users can manage their events, search by type or name, and participate in upcoming community activities.
 
-## React Compiler
+Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Create Events:** Logged-in users can create new events with details like title, description, type, date, image, and location.  
+- **Browse Upcoming Events:** Users can view all upcoming events with search and type filters.  
+- **Join Events:** Participate in events and track joined events easily.  
+- **User Event Management:** View all events created by the logged-in user.  
+- **Responsive Design:** Works seamlessly on mobile, tablet, and desktop devices.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Technologies Used
+
+- React.js  
+- React Router  
+- React DatePicker  
+- MongoDB  
+- Node.js & Express  
+- Tailwind CSS  
+
+
+

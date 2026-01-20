@@ -37,7 +37,7 @@ const CreateEvent = () => {
       date: formData.date.toISOString(),
     };
 
-    const res = await fetch("https://a10-social-event-server.vercel.app/events", {
+    const res = await fetch("https://a10-social-event-server-jodjzk0zv-habiburrahman1010s-projects.vercel.app/events", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(eventData),
